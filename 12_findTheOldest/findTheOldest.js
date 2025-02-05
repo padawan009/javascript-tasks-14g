@@ -28,6 +28,17 @@ const findTheOldest = function(people) {
   return person
 }
 
+// с помощью сортировки 
+
+// const findTheOldest = function(people) {
+//   people.sort((curr, old) => {
+//     thisYear = new Date().getFullYear()
+//     oldest = (old.yearOfDeath || thisYear) - old.yearOfBirth
+//     current = (curr.yearOfDeath || thisYear) - curr.yearOfBirth
+//     return oldest - current
+//   })
+//   return people[0]
+// }
 
 console.log(findTheOldest(people))
 

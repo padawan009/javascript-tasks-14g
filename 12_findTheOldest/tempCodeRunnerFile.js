@@ -1,7 +1,7 @@
 const people = [
     {
       name: "Carly",
-      yearOfBirth: 2020,
+      yearOfBirth: 1066,
     },
     {
       name: "Ray",
@@ -16,17 +16,26 @@ const people = [
   ]
 
 
-const findTheOldest = function(people) {
-  const person = people.reduce((theOldest, current) => {
-    const theOldestAge = (theOldest.yearOfDeath || new Date().getFullYear()) - theOldest.yearOfBirth
-    const currentAge = (current.yearOfDeath || new Date().getFullYear()) - current.yearOfBirth
-    if (theOldestAge > currentAge)
-      return theOldest
-    else
-    return current
-  })
-  return person
-}
+// const findTheOldest = function(people) {
+//   const person = people.reduce((theOldest, current) => {
+//     const theOldestAge = (theOldest.yearOfDeath || new Date().getFullYear()) - theOldest.yearOfBirth
+//     const currentAge = (current.yearOfDeath || new Date().getFullYear()) - current.yearOfBirth
+//     if (theOldestAge > currentAge)
+//       return theOldest
+//     else
+//     return current
+//   })
+//   return person
+// }
 
+const findTheOldest = function(people) {
+  people.sort((curr, old) => {
+    thisYear = new Date().getFullYear()
+    oldest = (old.yearOfDeath || thisYear) - old.yearOfBirth
+    current = (curr.yearOfDeath || thisYear) - curr.yearOfBirth
+    return oldest - current
+  })
+  return people[0]
+}
 
 console.log(findTheOldest(people))

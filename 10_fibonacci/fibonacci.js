@@ -7,11 +7,11 @@ const fibonacci = function(num) {
         return 1
     else if (+num > 2) {
         let fib = 0
-        let pr = 1
+        let prev = 1
         let next = 1
         for (let i = 2; i < num; i++) {
-            fib = pr + next
-            pr = next
+            fib = prev + next
+            prev = next
             next = fib
         }
         return fib
