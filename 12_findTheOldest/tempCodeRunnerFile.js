@@ -1,7 +1,7 @@
 const people = [
     {
       name: "Carly",
-      yearOfBirth: 1066,
+      yearOfBirth: 2020,
     },
     {
       name: "Ray",
@@ -30,6 +30,3 @@ const findTheOldest = function(people) {
 
 
 console.log(findTheOldest(people))
-
-// теперь можно и поспать
-module.exports = findTheOldest;
